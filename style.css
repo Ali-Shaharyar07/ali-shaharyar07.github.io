@@ -407,3 +407,170 @@ section{
   background-color: #000000;
   color: #56e056;
 }
+
+@media (max-width: 1090px) {
+  .about-image img {
+      width: 250px;  /* Reduce size for smaller screens */
+  }
+  .LRf {
+    animation: LRf 10s infinite linear;
+  }
+
+
+  .RL {
+    color: #0F1321;
+    
+    -webkit-text-stroke-color: #FEFBEA;
+    -webkit-text-stroke-width: 2px;
+    font-size: 70px;
+    animation: RL 200s infinite linear;
+  }
+  
+  @keyframes  RL {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .LR {
+    font-size: 70px;
+    animation: LR 200s infinite linear;
+  }
+  header{
+    position: relative;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgba(12, 15, 23, 0.239);
+    backdrop-filter: blur(8px);
+    color: #1b5732;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    z-index: 1000;
+
+}
+
+.logo{
+  color: #ffffff;
+  font-family: AvantStd;
+  font-size:  1.0rem;
+  font-weight: 600;
+  text-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+}
+
+.logo:hover{
+  transform: scale(1.1);
+}
+
+.nav-links{
+  display: flex;
+  gap: 1.0rem;
+}
+
+li a{
+  position: relative;
+  color: #FEFBEA;
+  font-weight: 300;
+}
+
+li a::before{
+  position: absolute;
+  content: '';
+  width: 0;
+  left: 0;
+  height: 3px;
+  top: 25px;
+  border-radius: 1rem;
+  transition: 0.3s ease-in-out;
+  background: linear-gradient(to right, #FEFBEA, #FEFBEA); 
+}
+
+li a:hover::before{
+  width: 100%;
+}
+.visit-btn{
+  padding: 0.7rem 0.5rem;
+  border-radius: 1rem;
+  border: none;
+  font-weight: 450;
+  font-size: 0.8rem;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  text-wrap: nowrap;
+  transition: 0.3s ease-in-out;
+  background: #FEFBEA;
+}
+.visit-btn:hover{
+  background: #fefbeae0;
+  transform: scale(1.03);
+}
+
+#menu-button{
+  font-size: 1rem;
+  display: none;
+}
+
+.about {
+  color: #FEFBEA;
+  padding-top: 0%;
+  margin-top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #000000;
+}
+
+.about-container {
+  padding-top: 0%;
+  margin-top: 0%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.about-image img {
+  width: 300px;
+  height: auto;
+  align-items: center
+}
+
+.about-text {
+  margin-left: 0px;
+  text-align: center;
+}
+
+.about-text h1 {
+  
+  font-size: 60px;
+  font-family: "Jersey 15";
+  text-shadow: 0 0 20px rgb(151, 151, 151);
+}
+
+.about-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.projects h1{
+  font-size: 90px;
+  text-align: center;
+}
+
+.container{
+  gap: 1.2rem;
+}
+
+}
