@@ -1,0 +1,409 @@
+
+@font-face {
+    font-family: 'Geek';
+    src: url(Fonts\\geek.ttf);
+}
+@font-face {
+    font-family: 'AvantStd';
+    src: url(Fonts\\ITCAvantGardeStd-Bk.ttf);
+}
+@font-face {
+    font-family: 'AvantBold';
+    src: url(Fonts\\ITCAvantGardeStd-Bold.ttf);
+}
+@font-face {
+    font-family: 'AvantMed';
+    src: url(Fonts\\ITCAvantGardeStd-Md.ttf);
+}
+@font-face {
+    font-family: 'Nasa';
+    src: url(Fonts\\nasalizationrg.ttf);
+}
+body{
+    background-color: #000000;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    text-decoration: none;
+    scroll-behavior: smooth;
+    list-style: none;
+}
+
+header{
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5.2rem;
+    background-color: rgba(12, 15, 23, 0.239);
+    backdrop-filter: blur(8px);
+    color: #1b5732;
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+    z-index: 1000;
+
+}
+
+.logo{
+    color: #ffffff;
+    font-family: AvantStd;
+    font-size:  1.3rem;
+    font-weight: 600;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+}
+
+.logo:hover{
+    transform: scale(1.1);
+}
+
+.nav-links{
+    display: flex;
+    gap: 2.2rem;
+}
+
+li a{
+    position: relative;
+    color: #FEFBEA;
+    font-weight: 300;
+}
+
+li a::before{
+    position: absolute;
+    content: '';
+    width: 0;
+    left: 0;
+    height: 3px;
+    top: 25px;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, #FEFBEA, #FEFBEA); 
+}
+
+li a:hover::before{
+    width: 100%;
+}
+.visit-btn{
+    padding: 0.7rem 1.2rem;
+    border-radius: 1rem;
+    border: none;
+    font-weight: 450;
+    font-size: 1rem;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+    background: #FEFBEA;
+}
+.visit-btn:hover{
+    background: #fefbeae0;
+    transform: scale(1.03);
+}
+
+#menu-button{
+    font-size: 2rem;
+    display: none;
+}
+
+section{
+    min-height: 60vh;
+    padding: 7rem 5%;
+    width: 100%;
+    position: relative;
+}
+
+
+.scroll-section{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FEFBEA;
+    font-size: 100px;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+
+.scroll-container {
+    width: 100%;
+    display: flex;
+    margin-top: 0%;
+    align-items: top;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .scroll {
+    white-space: nowrap;
+
+  }
+  .scroll p{
+    font-family: "Bahnschrift";
+  }
+  .scroll div {
+    display: flex;
+    gap: 1em;
+  }
+
+  .RL {
+    color: #0F1321;
+    -webkit-text-stroke-color: #FEFBEA;
+    -webkit-text-stroke-width: 2px;
+    animation: RL 420s infinite linear;
+  }
+  
+  @keyframes  RL {
+    from {
+      transform: translateX(0%);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .LR {
+    animation: LR 420s infinite linear;
+  }
+  
+  @keyframes  LR {
+    from {
+      transform: translateX(-50%);
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+.projects {
+    padding-top: 0%;
+    padding-bottom: 0%;
+    margin-bottom: 0%;
+}
+
+.projects h1 {
+    text-align: center;
+    color: #FEFBEA;
+    font-size: 100px;
+    font-family: "Jersey 15";
+     text-shadow:
+
+    0 0 40px rgb(151, 151, 151),
+    0 0 80px rgba(154, 154, 154, 0.622),
+    0 0 90px rgba(115, 114, 114, 0.075);
+    padding-bottom: 1%;
+}   
+
+.container{
+  
+  padding-top: 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2%;
+}
+
+.box1, .box2, .box3{
+  text-align: center;
+  border: solid 2px #FEFBEA;
+  padding: 10px;
+  display: inline-block;
+  color: #FEFBEA;
+  width: 25%;
+  flex: 1 1 300px;
+  margin-bottom: 2%;
+  transition: 0.3s ease-in-out;
+}
+
+
+.box1:hover {
+    cursor: pointer;
+    color: #64c886;
+    box-shadow: 10px 10px #4F9D69; 
+    font-size: 16px;
+}
+
+.box2:hover {
+    cursor: pointer;
+    color: #f29965;
+    box-shadow: 10px 10px #FB6107 
+}
+
+.box3:hover {
+    cursor: pointer;
+    color: #68bff2;
+    box-shadow: 10px 10px #449DD1 
+}
+
+.box1 p, .box2 p, .box3 p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s ease-in-out, max-height 0.5s ease-in-out;
+}
+
+
+.box1:hover p, .box2:hover p, .box3:hover p {
+  opacity: 1;
+  max-height: 1000px; 
+}
+
+.box1:hover .kk{
+  height: 0;
+  visibility: hidden;
+}
+.kkH{
+  height: 0;
+  visibility: hidden;
+}
+
+.box1:hover .kkH{
+  height: 100%;
+  visibility: visible;
+}
+
+.box2:hover .ft{
+  height: 0;
+  visibility: hidden;
+}
+
+.ftH{
+  visibility: hidden;
+  height: 0;
+}
+
+.box2:hover .ftH{
+  height: 100%;
+  visibility: visible;
+}
+
+
+.box3:hover .pr{
+  height: 0;
+  visibility: hidden;
+}
+.prH{
+  height: 0;
+  visibility: hidden;
+}
+
+.box3:hover .prH{
+  height: 100%;
+  visibility: visible;
+}
+
+
+
+.foot h3{
+  color: #FEFBEA;
+  font-family: "Pixelify Sans";
+  font-size: 22px;
+}
+
+.foot{
+  margin-bottom:  5px;
+  border-top: solid 2px #FEFBEA;
+  border-bottom: solid 2px #FEFBEA;
+  padding: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.LRf {
+  animation: LRf 80s infinite linear;
+}
+
+@keyframes  LRf {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+.playing {
+  background-color: #000000;
+  color: #FB6107;
+}
+
+.reading {
+  background-color: #000000;
+  color: #64c886;
+}
+
+.listening { 
+  background-color: #000000;
+  color: #449DD1;
+}
+
+.sep {
+  background-color: #000000;
+  color: #2c2c2b;
+}
+
+
+.about {
+  color: #FEFBEA;
+  padding-top: 0%;
+  margin-top: 0%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: #000000;
+}
+
+.about-container {
+  padding-top: 0%;
+  margin-top: 0%;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+}
+
+.about-text {
+  flex: 1;
+  margin-left: 100px;
+}
+
+.about-text h1 {
+  
+  font-size: 100px;
+  font-family: "Jersey 15";
+  text-shadow: 0 0 20px rgb(151, 151, 151);
+}
+
+.about-text p {
+  font-size: 20px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hi{
+  background-color: #000000;
+  color: #FFD700;
+}
+
+.creating{
+  background-color: #000000;
+  color: #77b7fc;
+}
+
+.exploring{
+  background-color: #000000;
+  color: #56e056;
+}
