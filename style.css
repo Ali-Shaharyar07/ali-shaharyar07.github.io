@@ -89,6 +89,11 @@ li a::before{
 li a:hover::before{
     width: 100%;
 }
+
+li a.active::before {
+    width: 100%;
+}
+
 .visit-btn{
     padding: 0.7rem 1.2rem;
     border-radius: 1rem;
