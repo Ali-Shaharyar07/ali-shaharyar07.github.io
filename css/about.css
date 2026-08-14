@@ -1,0 +1,141 @@
+#about-page {
+    max-width: 1400px;
+    margin: auto;
+    padding: 120px 64px 80px;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.about-text p {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: rgba(244, 234, 220, 0.85);
+    margin-bottom: 48px;
+}
+
+.stack-title {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    color: var(--accent-gold);
+    margin-bottom: 24px;
+}
+
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tech-pill {
+    padding: 8px 14px;
+    border: 1px solid rgba(244, 234, 220, 0.12);
+    border-radius: 6px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.03);
+}
+
+/* ---------- INTERACTIVE PORTRAIT ---------- */
+.about-image-container {
+    position: relative;
+    z-index: 10; 
+    width: 100%;
+    max-width: 450px;
+    aspect-ratio: 4 / 5;
+    margin: auto;
+    border-radius: 18px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    cursor: crosshair;
+}
+
+/* Kills the dead zone by ensuring the container catches all mouse movements */
+.about-image-container * {
+    pointer-events: none !important;
+}
+
+.about-image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* THE FIX: Switch to a raster mask instead of a vector clip-path */
+.reveal-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    
+    /* Default center coordinates */
+    --x: 50%;
+    --y: 50%;
+    
+    /* The bulletproof mask */
+    -webkit-mask-image: radial-gradient(circle 120px at var(--x) var(--y), black 100%, transparent 100%);
+    mask-image: radial-gradient(circle 120px at var(--x) var(--y), black 100%, transparent 100%);
+    
+    /* Smooth flashlight fade-in */
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.about-image-container:hover .reveal-wrapper {
+    opacity: 1;
+}
+
+/* ================================================= */
+/* RESPONSIVE: ABOUT PAGE                            */
+/* ================================================= */
+
+@media (max-width: 900px) {
+    /* Collapse the split layout into a single column */
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 56px;
+    }
+
+    /* Ensure the image stays perfectly centered */
+    .about-image-container {
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Reduce page padding for mobile screens */
+    #about-page {
+        padding: 80px 24px 40px;
+    }
+
+    /* Tighten the datasheet container */
+    .datasheet-container {
+        padding: 20px;
+    }
+
+    /* Stack the datasheet header elements */
+    .datasheet-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    /* Make the tech stack pills slightly smaller */
+    .tech-pill {
+        font-size: 0.75rem;
+        padding: 8px 12px;
+    }
+}

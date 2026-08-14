@@ -1,0 +1,567 @@
+@font-face{
+
+    font-family:"Nasalization";
+
+    src:url("../assets/fonts/Nasalization.otf") format("opentype");
+
+    font-weight:normal;
+    font-style:normal;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+
+    --background: #000D34;
+
+    --text: #F4EADC;
+
+    --accent-gold: #E2A93E;
+    --accent-red: #C11B1D;
+    --accent-blue: #009DE6;
+
+}
+
+.outline,
+.outline.highlight,
+.band,
+.band.highlight{
+
+    color:var(--background);
+
+    transition:
+        color .8s ease;
+
+}
+
+#planet.revealed .outline{
+    color:var(--accent-gold);
+}
+
+#planet.revealed .outline.highlight{
+    color:#F1D495;
+}
+
+#planet.revealed .band{
+    color:#7A5A20;
+}
+
+#planet.revealed .band.highlight{
+    color:#B98A34;
+}
+
+body {
+    background: var(--background);
+}
+
+#landing-page {
+    background: var(--background);
+}
+
+#landing-page {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #000D34;
+
+    overflow: hidden;
+    position: relative;
+}
+
+#planet {
+    position: absolute;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: "JetBrains Mono", monospace;
+
+    line-height: 0.9;
+
+    letter-spacing: 0;
+
+    color: var(--accent-gold);
+
+    user-select: none;
+    pointer-events: none;
+
+    white-space: pre;
+
+    opacity: 0;
+    animation: fadeIn 0.8s ease-in-out forwards;
+    animation-delay: 1s;
+
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+#stars {
+    position: absolute;
+    inset: 0;
+}
+
+.star{
+    position:absolute;
+
+    color:var(--text);
+
+    font-family:monospace;
+
+    user-select:none;
+
+    opacity:0;
+
+    animation:starFade .8s ease-in-out forwards;
+}
+
+@keyframes starFade{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:var(--target-opacity);
+    }
+
+}
+
+#navigation{
+    position:absolute;
+    inset:0;
+}
+
+.nav-beacon{
+
+    position:absolute;
+
+    
+
+    font-family:"Nasalization", sans-serif;
+
+    font-size:1.0rem;
+
+    cursor:pointer;
+    user-select:none;
+
+    transition:.3s ease;
+
+    opacity:0;
+    transform:translateY(8px);
+
+    animation:beaconReveal .6s ease forwards;
+
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+@keyframes beaconReveal{
+
+    from{
+        opacity:0;
+        transform:translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.nav-beacon span {
+    opacity: 0;
+    color: #fffdd0;
+    transform: translateX(-6px);
+
+    transition:
+        opacity .2s ease,
+        transform .2s ease;
+}
+
+.nav-beacon:hover span {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.nav-beacon:hover .beacon{
+
+    transform:rotate(45deg) scale(1.35);
+
+    border-color:#F1D495;
+
+    box-shadow:
+        0 0 12px rgba(241,212,149,.9),
+        0 0 28px rgba(226,169,62,.5);
+
+}
+
+
+
+.beacon {
+    position: relative;
+
+    width:16px;
+    height:16px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    border: 1.5px solid var(--accent-gold);
+    transform: rotate(45deg);
+
+
+    
+    transition: .3s ease;
+    animation: beaconPulse 3.5s ease-in-out infinite;
+}
+
+.beacon::before {
+    content: "";
+
+    position: absolute;
+
+    width: 3px;
+    height: 3px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%) rotate(-45deg);
+
+    border-radius: 50%;
+    background: var(--accent-gold);
+
+    box-shadow: 0 0 8px var(--accent-gold);
+}
+
+
+@keyframes beaconPulse {
+
+    0%,100%{
+        box-shadow:0 0 6px rgba(226,169,62,.35);
+    }
+
+    50%{
+        box-shadow:
+            0 0 12px rgba(226,169,62,.8),
+            0 0 24px rgba(226,169,62,.35);
+    }
+
+}
+
+#about{
+    left:16%;
+    top:56%;
+
+    animation-delay:1.0s;
+}
+
+#projects{
+    left:80%;
+    top:25%;
+
+    animation-delay:1.2s;
+}
+
+#art{
+    left:77%;
+    top:72%;
+
+    animation-delay:1.4s;
+}
+
+#about .beacon{
+    animation-delay:0s;
+}
+
+#projects .beacon{
+    animation-delay:1.2s;
+}
+
+#art .beacon{
+    animation-delay:2.3s;
+}
+
+#wordmark{
+    
+    position:absolute;
+
+    top:28px;
+    left:36px;
+
+    font-family:"JetBrains Mono", sans-serif;
+
+    font-size:0.9rem;
+
+    letter-spacing:.15em;
+
+    color:rgba(244,234,220,.45);
+
+    user-select:none;
+
+    transition:.3s ease;
+}
+
+#wordmark:hover{
+    color:rgba(244,234,220,.8);
+}
+
+#navigation-hint{
+
+    position:absolute;
+
+    left:36px;
+    bottom:36px;
+
+    display:flex;
+    align-items:center;
+    gap:2px;
+
+
+    padding:12px 16px;
+
+    border:1px solid rgba(255, 184, 53, 0.194);
+    border-radius:8px;
+
+    background:rgba(0,13,52,.25);
+    backdrop-filter:blur(10px);
+
+    box-shadow:
+        0 8px 32px rgba(214, 135, 0, 0.15);
+
+    opacity:0;
+
+    animation:
+        hintReveal .6s ease forwards;
+
+    animation-delay:1.6s;
+}
+
+@keyframes hintReveal {
+
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+#hint-pre{
+
+    font-family:"JetBrains Mono", monospace;
+
+    color:var(--accent-gold);
+
+    margin-right:2px;
+
+}
+
+#hint-text{
+
+    font-family:"Tiny5", monospace;
+
+    color:rgba(244,234,220,.9);
+
+}
+
+
+#hint-cursor{
+
+    font-family:"JetBrains Mono", monospace;
+
+    color:var(--accent-gold);
+
+    animation:blink 2.5s step-end infinite;
+
+    user-select:none;
+
+}
+
+@keyframes blink{
+
+    0%,49%{
+        opacity:1;
+    }
+
+    50%,100%{
+        opacity:0;
+    }
+
+}
+
+a.nav-beacon {
+    text-decoration: none;
+}
+
+
+/* ================================================= */
+/* RESPONSIVE: LANDING PAGE                          */
+/* ================================================= */
+
+@media (max-width: 1000px) {
+    /* Slightly shrink the planet for tablets, but keep it prominent */
+    #planet {
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    /* 
+      TABLET & MOBILE UX FIX: Touch devices don't have hover states. 
+      Force the text labels to always be visible starting at tablet sizes.
+    */
+    .nav-beacon span {
+        opacity: 1;
+        transform: translateX(4px);
+    }
+
+    /* Increase the tap target size slightly for fingers */
+    .beacon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .beacon::before {
+        width: 4px;
+        height: 4px;
+    }
+
+    /* 
+      Reposition the beacons so they sit around the smaller planet
+      and don't get pushed off the edges of the screen.
+    */
+    #about {
+        left: 15%;
+        top: 70%;
+    }
+
+    #projects {
+        left: 60%;
+        top: 25%;
+    }
+
+    #art {
+        left: 65%;
+        top: 75%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    /* Scale the ASCII planet down to fit mobile viewports, slightly larger than before */
+    #planet {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+
+    /* Shift the wordmark and hint inward */
+    #wordmark {
+        top: 20px;
+        left: 20px;
+    }
+
+    #navigation-hint {
+        left: 20px;
+        bottom: 20px;
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+
+    /* 
+      Reposition the beacons so they sit around the smaller planet
+      and don't get pushed off the edges of the screen.
+    */
+    #about {
+        left: 15%;
+        top: 72%;
+    }
+
+    #projects {
+        left: 60%;
+        top: 25%;
+    }
+
+    #art {
+        left: 65%;
+        top: 75%;
+    }
+}
+
+/* ================================================= */
+/* RESPONSIVE: LANDING PAGE - MOBILE LANDSCAPE       */
+/* ================================================= */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    /* Aggressively scale down the planet so it fits the short vertical space */
+    #planet {
+        transform: translate(-50%, -50%) scale(0.45);
+    }
+
+    /* Tuck UI elements closer to the edges */
+    #wordmark {
+        top: 16px;
+        left: 20px;
+    }
+
+    #navigation-hint {
+        left: 20px;
+        bottom: 16px;
+        padding: 6px 10px;
+    }
+
+    /* 
+      Reposition the beacons to fit the wider, shorter aspect ratio. 
+      Spread them out horizontally so they don't overlap the squashed planet.
+    */
+    #about {
+        left: 25%;
+        top: 65%;
+    }
+
+    #projects {
+        left: 75%;
+        top: 25%;
+    }
+
+    #art {
+        left: 70%;
+        top: 75%;
+    }
+
+    /* Ensure labels and touch targets carry over from the tablet layout */
+    .nav-beacon span {
+        opacity: 1;
+        transform: translateX(4px);
+    }
+
+    .beacon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .beacon::before {
+        width: 4px;
+        height: 4px;
+    }
+}

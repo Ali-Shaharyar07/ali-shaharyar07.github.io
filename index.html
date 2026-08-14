@@ -1,111 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');</style>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Megrim&display=swap');</style>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Jersey+15&display=swap');</style>
-    <style>@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');</style>
-</head>
+    <title>ALISH</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@100..800&family=Tiny5&family=Zilla+Slab:wght@300;400;500;600;700&family=Michroma&display=swap" rel="stylesheet"></head>
+
+
 <body>
-    <header class = "header">
-        <a href="#" class = "logo"><span style = "font-family: AvantMed; font-weight: 90;">Ali Shaharyar</span></a>
 
-        <ul class = "nav-links">
-            <li>
-                <a href="projects.html">
-                    Projects
-                </a>
-            </li>
-            <li>
-                <a href="#about">
-                    About
-                </a>
-            </li>
-        </ul>
+    <div id="landing-page">
 
-        <i class="fa-solid fa-bars" id="menu-button"></i>
+        
+    <div id="stars"></div>
 
-        <a href="https://github.com/Ali-Shaharyar07" target="_blank">
-            <button class="visit-btn">Visit Github</button>
-        </a>
-    </header>
+    <div id="wordmark">
+        alish
+    </div>
 
-    <section id = "main" class = "scroll-section">
-        <div class="scroll-container">
-            <div class="scroll">
-                <div class="RL">
-                    <p>
-                        CREATE LEARN DEVELOP GAME CREATE LEARN DEVELOP GAME CREATE LEARN DEVELOP GAME CREATE CREATE LEARN DEVELOP GAME CREATE LEARN DEVELOP GAME CREATE LEARN DEVELOP 
-                    </p>
-                </div>
-                <div class="LR">
-                    <p style="font-family: AvantBold" >
-                        GAME DEVELOP LEARN CREATE CODE GAME DEVELOP LEARN CREATE GAME DEVELOP LEARN CREATE GAME DEVELOP LEARN CREATE GAME DEVELOP LEARN CREATE GAME DEVELOP LEARN CREATE
-                    </p>
-                   
-                </div>
-                <div class="RL">
-                    <p>
-                        CREATE LEARN DEVELOP GAME CREATE LEARN DEVELOP GAME CREATE LEARN DEVELOP GAME CREATE CREATE LEARN DEVELOP GAME CREATE LEARN DEVELOP GAME CREATE LEARN DEVELOP 
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div id="hero">
 
-    <section class="projects" id="projects">
-            <div class="projhead">
-                <h1>PROJECTS</h1>
-            </div>
+        <pre id="planet"></pre>
+        
+        <nav id="navigation">
 
-            <div class="container">
-                        <div class="box1">
-                            <h3>KisaanKar</h3>
-                            <img src="Images/KisaanKar.png" alt="" class="kk">
-                            <img src="Images/KisaanKarH.png" alt="" class="kkH">
-                            <p>KisaanKar is a vehicular robot aimed at empowering farmers by integrating automation into agriculture. Designed to address challenges like water scarcity and inefficient resource use, it utilizes sensors to optimize irrigation, monitor soil health, and improve crop yields.</p>
-                        </div>
-                        <div class="box2">
-                            <h3>Facial Tracking</h3>
-                            <img src="Images/FacialTracking.png" alt="" class="ft">
-                            <img src="Images/FacialTrackingH.png" alt="" class="ftH">
-                            <p>Utilizes Python's OpenCV library to track facial coordinates in real time using a webcam. The system interfaces with an Arduino, which processes the detected coordinates and maps them onto servo motors, allowing a mounted camera to follow the user's face.</p>
-                        </div>
-                        <div class="box3">
-                            <h3>Prosthetic Hand</h3>
-                            <img src="Images/Prosthetic.png" alt="" class="pr">
-                            <img src="Images/ProstheticH.png" alt="" class="prH">
-                            <p>Using OpenCV and a webcam, this project tracks hand movements and maps them onto a 3D-printed prosthetic hand via Arduino-controlled servos. Each finger’s motion is mirrored in real time using coordinates which are then parsed to map onto servos. </p>
-                        </div>
-            </div>
-    </section>
-    <section id="about" class="about">
-        <div class="about-container">
-            <div class="about-image">
-                <img src="Images/Pfp.png" alt="Profile Picture">
-            </div>
-            <div class="about-text">
-                <h1>ABOUT ME</h1>
-                <p>
-                    <mark class="hi">Hi!</mark> I’m Ali, an 18-year-old with a passion for <mark class="creating">creating</mark>, <mark class="exploring">exploring</mark>, and diving deep into the things that fascinate me. Whether it’s building something new, getting lost in a game, or just figuring out how things work, I’m always up for a challenge.
-                </p>
-            </div>
-        </div>
-    </section>
-    
+            <!-- About Beacon -->
+            <a href="./pages/about.html" id="about" class="nav-beacon">
+                <div class="beacon"></div>
+                <span class="label" data-text="ABOUT">ABOUT</span>
+            </a>
 
-    <div class="foot">
-        <div class="LRf">
-            <h3><mark class="playing">PLAYING:</mark> Valorant, F1 & More <mark class="sep">〣</mark> <mark class="reading">READING:</mark> The Martian - Andy Weir <mark class="sep">〣</mark> <mark class="listening">LISTENING TO:</mark> What You Know - Two Door Cinema Club <mark class="sep">〣</mark> <mark class="playing">PLAYING:</mark> Valorant, F1 & More <mark class="sep">〣</mark> <mark class="reading">READING:</mark> The Martian - Andy Weir <mark class="sep">〣</mark> <mark class="listening">LISTENING TO:</mark> What You Know - Two Door Cinema Club <mark class="sep">〣</mark> <mark class="playing">PLAYING:</mark> Valorant, F1 & More <mark class="sep">〣</mark> <mark class="reading">READING:</mark> The Martian - Andy Weir <mark class="sep">〣</mark> <mark class="listening">LISTENING TO:</mark> What You Know - Two Door Cinema Club <mark class="sep">〣</mark> </h3>
-        </div>
+            <!-- Projects Beacon -->
+            <a href="./pages/projects.html" id="projects" class="nav-beacon">
+                <div class="beacon"></div>
+                <span class="label" data-text="PROJECTS">PROJECTS</span>
+            </a>
+
+            <!-- Art Beacon -->
+            <a href="./pages/art.html" id="art" class="nav-beacon">
+                <div class="beacon"></div>
+                <span class="label" data-text="ART">ART</span>
+            </a>
+
+        </nav>
+
+        
+        <div id="navigation-hint">
+
+            <span id="hint-pre">></span>
+            <span id="hint-text" data-text=" Select a beacon"></span>
+            <span id="hint-cursor">_</span>
         </div>
 
 
-    <script src = "script.js"></script>
+    </div>
+
+</div>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
