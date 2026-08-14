@@ -1,5 +1,5 @@
 import { projects } from "./data/projects.js";
-import { ProjectCard } from "./components/ProjectCard.js";
+import { ProjectCard } from "./components/projectCard.js";
 import { setupPageTransitions } from "./systems/navigation.js";
 const grid = document.getElementById("projects-grid");
 const filters = document.querySelectorAll("#project-filters button");
